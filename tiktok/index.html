@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>تيك توك | jnk.z9</title>
+<style>
+  :root {
+    --bg: #070605;
+    --gold-1: #fff0b0;
+    --gold-2: #e6bc4d;
+    --gold-3: #a8791e;
+    --gold-4: #6b4a0e;
+    --glow: rgba(230, 188, 77, .35);
+    color-scheme: dark;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background:
+      radial-gradient(60% 45% at 50% 50%, #1d1508 0%, rgba(29,21,8,0) 70%),
+      var(--bg);
+    display: grid;
+    place-items: center;
+  }
+
+  .gold-btn {
+    position: relative;
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    isolation: isolate;
+    background: radial-gradient(circle at 35% 30%, #1f180b 0%, #0b0905 70%);
+    box-shadow:
+      0 0 0 1px rgba(255, 240, 176, .15),
+      0 18px 40px rgba(0, 0, 0, .7),
+      0 0 38px var(--glow),
+      inset 0 2px 6px rgba(255, 240, 176, .12),
+      inset 0 -10px 18px rgba(0, 0, 0, .6);
+    transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease;
+    -webkit-tap-highlight-color: transparent;
+    animation: breathe 4.5s ease-in-out infinite;
+  }
+
+  /* gold metallic ring */
+  .gold-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    padding: 3px;
+    background: conic-gradient(from 210deg,
+      var(--gold-1), var(--gold-2), var(--gold-4), var(--gold-2),
+      var(--gold-1), var(--gold-3), var(--gold-1));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+            mask-composite: exclude;
+    z-index: 1;
+  }
+
+  /* light sweep */
+  .gold-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(115deg, transparent 38%, rgba(255,240,176,.35) 50%, transparent 62%);
+    background-size: 250% 100%;
+    background-position: 130% 0;
+    transition: background-position .9s ease;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .gold-btn:hover::after { background-position: -30% 0; }
+
+  .gold-btn:hover {
+    transform: scale(1.06);
+    box-shadow:
+      0 0 0 1px rgba(255, 240, 176, .25),
+      0 22px 46px rgba(0, 0, 0, .75),
+      0 0 60px rgba(230, 188, 77, .55),
+      inset 0 2px 6px rgba(255, 240, 176, .18),
+      inset 0 -10px 18px rgba(0, 0, 0, .6);
+  }
+  .gold-btn:active { transform: scale(.96); }
+  .gold-btn:focus-visible { outline: 2px solid var(--gold-1); outline-offset: 6px; }
+
+  .gold-btn svg {
+    position: relative;
+    z-index: 3;
+    width: 54px;
+    height: 54px;
+    filter: drop-shadow(0 2px 6px rgba(230, 188, 77, .45));
+  }
+
+  @keyframes breathe {
+    0%, 100% { box-shadow:
+      0 0 0 1px rgba(255,240,176,.15), 0 18px 40px rgba(0,0,0,.7), 0 0 30px rgba(230,188,77,.25),
+      inset 0 2px 6px rgba(255,240,176,.12), inset 0 -10px 18px rgba(0,0,0,.6); }
+    50% { box-shadow:
+      0 0 0 1px rgba(255,240,176,.2), 0 18px 40px rgba(0,0,0,.7), 0 0 52px rgba(230,188,77,.45),
+      inset 0 2px 6px rgba(255,240,176,.12), inset 0 -10px 18px rgba(0,0,0,.6); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .gold-btn { animation: none; transition: none; }
+    .gold-btn::after { transition: none; }
+  }
+</style>
+</head>
+<body>
+  <a id="tiktokBtn" class="gold-btn" href="https://www.tiktok.com/@jnk.z9"
+     target="_blank" rel="noopener noreferrer" aria-label="افتح حسابي على تيك توك">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <defs>
+        <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#fff0b0"/>
+          <stop offset=".35" stop-color="#e6bc4d"/>
+          <stop offset=".7" stop-color="#b8861f"/>
+          <stop offset="1" stop-color="#f2d67a"/>
+        </linearGradient>
+      </defs>
+      <path fill="url(#gold)" d="M19.6 6.7a5.2 5.2 0 0 1-3.2-1.1A5.2 5.2 0 0 1 14.6 2h-3.3v13.4a2.8 2.8 0 1 1-2-2.7V9.3a6.1 6.1 0 1 0 5.3 6.1V9a8.4 8.4 0 0 0 5 1.6V6.7z"/>
+    </svg>
+  </a>
+
+<script>
+  (function () {
+    var btn = document.getElementById("tiktokBtn");
+    var url = "https://www.tiktok.com/@jnk.z9";
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      var w = window.open(url, "_blank", "noopener,noreferrer");
+      if (!w) { window.location.href = url; }
+    });
+  })();
+</script>
+</body>
+</html>
